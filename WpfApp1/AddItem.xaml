@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfApp1.AddItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+       Title="Vap3rShop" Height="787.185" Width="1095.444" ResizeMode="NoResize">
+    <Grid>
+        <Image x:Name="Preview" HorizontalAlignment="Left" Height="467" Margin="64,162,0,0" VerticalAlignment="Top" Width="363"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="235" Margin="512,275,0,0" Stroke="Black" VerticalAlignment="Top" Width="526"/>
+        <Rectangle HorizontalAlignment="Left" Height="547" Margin="33,124,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" OpacityMask="LightGray"/>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="512,630,0,0" Stroke="Black" VerticalAlignment="Top" Width="300"/>
+        <Button Content="Add an item"  HorizontalAlignment="Left" Margin="859,629,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" Click="AddClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF628799" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle HorizontalAlignment="Left" Height="42" Margin="512,552,0,0" Stroke="Black" VerticalAlignment="Top" Width="526"/>
+
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="512,240,0,0" VerticalAlignment="Top" Height="30" Width="545" FontSize="16"/>
+        <Label Content="Cost:" HorizontalAlignment="Left" Margin="512,515,0,0" VerticalAlignment="Top" Height="30" Width="545" FontSize="16"/>
+        <Label Content="Amount:" HorizontalAlignment="Left" Margin="512,599,0,0" VerticalAlignment="Top" Height="30" Width="545" FontSize="16"/>
+        <RichTextBox  HorizontalAlignment="Left" Height="235" Margin="512,275,0,0" VerticalAlignment="Top" Width="526" FontSize="18" OpacityMask="LightGray" Background="LightGray">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="type here" Name="Description"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="859,23,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" Click="BackClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF628799" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox  x:Name="Name" Text="Item name" FontSize="22" HorizontalAlignment="Left" Height="54" Margin="33,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="442" OpacityMask="LightGray" Background="LightGray"/>
+        <Label Content="Image path:" HorizontalAlignment="Left" Margin="33,671,0,0" VerticalAlignment="Top" Height="30" Width="99" FontSize="16"/>
+        <TextBox  x:Name="ImagePath" Text="type here" FontSize="15" HorizontalAlignment="Left" Height="24" Margin="137,676,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Background="LightGray"/>
+        <TextBox  x:Name="Amount" Text="type here" FontSize="18" HorizontalAlignment="Left" Height="42" Margin="512,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" OpacityMask="LightGray" Background="LightGray"/>
+        <TextBox  x:Name="Price" Text="type here" FontSize="18" HorizontalAlignment="Left" Height="42" Margin="512,552,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="526" OpacityMask="LightGray" Background="LightGray"/>
+        <Button Content="Load"  HorizontalAlignment="Left" Margin="296,700,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" Click="LoadClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF628799" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

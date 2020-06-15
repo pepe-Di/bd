@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp1.RemoveItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="!" Height="378.704" Width="780.556">
+    <Grid>
+
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="102,272,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" Click="CancelClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF628799" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Ok" HorizontalAlignment="Left" Margin="513,272,0,0" VerticalAlignment="Top" Width="179" Height="42" FontSize="22" Click="DeleteClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF628799" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="&#xD;&#xA;Do you want to delete the item permanently?" HorizontalAlignment="Left" Margin="164,102,0,0" VerticalAlignment="Top" Height="89" Width="552" FontSize="22"/>
+        <Image x:Name="alertImage"  HorizontalAlignment="Left" Height="100" Margin="38,102,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseVapeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Preview" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="StatusId" Type="Int32" />
+    <NavigationProperty Name="Status" Relationship="Self.FK__Goods__StatusId__2D27B809" FromRole="Goods" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Role1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__User__RoleId__25869641" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Status1" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="MinValue" Type="Int32" />
+    <Property Name="MaxValue" Type="Int32" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__StatusId__2D27B809" FromRole="Status" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleId__25869641" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK__Goods__StatusId__2D27B809">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__25869641">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseVapeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK__Goods__StatusId__2D27B809" Association="Self.FK__Goods__StatusId__2D27B809">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__25869641" Association="Self.FK__User__RoleId__25869641">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
